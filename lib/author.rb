@@ -23,7 +23,7 @@ class Author
   end
 
   def ==(another_author)
-    self.name == another_author.name && self.id == another_author.id
+    self.name == another_author.name
   end
 
 end

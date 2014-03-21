@@ -23,7 +23,18 @@ class Book
   end
 
   def ==(another_book)
-    self.title == another_book.title && self.id == another_book.id
+    self.title == another_book.title
   end
 
+  def find_authors
+    results = DB.exec("SELECT authors.name FROM books
+               JOIN catalog ON (books.id = catalog.book_id)
+               JOIN authors ON (authors.id = catalog.author_id) WHERE books.id = #{self.id};")
+    authors = []
+    results.each do |result|
+      name = result['name']
+      authors << Author.new(name)
+    end
+    authors
+  end
 end

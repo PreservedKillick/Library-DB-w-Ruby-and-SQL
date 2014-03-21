@@ -22,8 +22,8 @@ describe 'Book' do
 
   describe '==(another_name)' do
     it 'should be the same book if they share the same name' do
-      test_book = Book.new('Waiting', 4)
-      test_book2 = Book.new('Waiting', 4)
+      test_book = Book.new('Waiting')
+      test_book2 = Book.new('Waiting')
       test_book.should eq test_book2
     end
   end

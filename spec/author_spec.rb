@@ -22,8 +22,8 @@ describe 'Author' do
 
   describe '==(another_name)' do
     it 'should be the same author if they share the same name' do
-      test_author = Author.new('Sam Jones', 2)
-      test_author2 = Author.new('Sam Jones', 2)
+      test_author = Author.new('Sam Jones')
+      test_author2 = Author.new('Sam Jones')
       test_author.should eq test_author2
     end
   end
